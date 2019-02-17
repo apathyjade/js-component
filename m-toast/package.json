@@ -1,0 +1,51 @@
+{
+  "name": "m-toast-aj",
+  "version": "1.0.12",
+  "description": "wap toast component",
+  "main": "/dist/index.min.js",
+  "module": "/dist/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev rollup -c -w",
+    "build": "NODE_ENV=buildMain rollup -c",
+    "build:module": "NODE_ENV=buildModule rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apathyjade/js-component/m-toast.git"
+  },
+  "keywords": [
+    "wap",
+    "m",
+    "toast"
+  ],
+  "author": "apathyjade",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "babel-core": "^6.26.3",
+    "babel-plugin-lodash": "^3.3.3",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "postcss-assets": "^5.0.0",
+    "posthtml": "^0.11.3",
+    "posthtml-sugarml": "^1.0.0-alpha3",
+    "rollup": "^0.60.1",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-image": "^1.0.2",
+    "rollup-plugin-inject": "^2.0.0",
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-posthtml": "^1.0.1",
+    "rollup-plugin-posthtml-template": "^1.3.0",
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-plugin-stylus-css-modules": "^1.5.0",
+    "rollup-plugin-uglify": "^4.0.0",
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "lodash.assign": "^4.2.0",
+    "lodash.template": "^4.4.0"
+  }
+}

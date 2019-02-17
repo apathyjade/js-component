@@ -1,0 +1,68 @@
+/*
+ * @Author: ApathyJade <apathyjade@outlook.com>
+ * @Version: 0.0.1
+ * @Date: 2018-06-08 11:07:09
+ * @Last Modified by:   xinyu.wang
+ * @Last Modified Time: 2018-06-08 11:07:09
+ */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.aj-toast {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all .5s linear;
+
+  &[aj-fade] {
+    background-color: rgba(35, 35, 35, 0);
+    transition: all .5s linear;
+  }
+
+  &[aj-fade] .body {
+    transform: scale(0, 0);
+    transition: all .2s linear;
+  }
+
+  .body {
+    padding: .48rem .48rem;
+    max-width: 90%;
+    min-width: 1.2rem;
+    line-height: .45rem;
+    border-radius: .16rem;
+    color: #fff;
+    font-size: .32rem;
+    background-color: rgba(53, 53, 53, 0.8);
+    transform scale(1, 1)
+    transition: all .2s linear;
+  }
+  .icon {
+    display: block;
+    margin: 0 auto .16rem;
+    width: .6rem;
+    height: .6rem;
+    background: inline('./imgs/loading.png');
+    background-repeat: no-repeat;
+    &[aj-type=loading] {
+      background-size: .6rem .6rem;
+      animation: rotate .8s infinite steps(12, start);
+    }
+  }
+  .msg {
+    margin: 0;
+    padding: 0;
+  }
+}

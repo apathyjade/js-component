@@ -1,0 +1,41 @@
+{
+  "name": "dialog-aj",
+  "version": "1.0.0",
+  "description": "js dialog plugin",
+  "main": "index.js",
+  "scripts": {
+    "rollup": "rollup -c -w",
+    "build": "rollup -c ./config/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dialog"
+  ],
+  "author": "apathyjade",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-syntax-jsx": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.3.3",
+    "autoprefixer": "^9.4.8",
+    "cssnano": "^4.1.10",
+    "deku": "^2.0.0-rc16",
+    "postcss-modules": "^1.4.1",
+    "precss": "^4.0.0",
+    "react": "^16.8.3",
+    "rollup": "^1.2.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-uglify": "^6.0.2",
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "react-dom": "^16.8.3"
+  }
+}

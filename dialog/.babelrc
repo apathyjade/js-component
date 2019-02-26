@@ -1,0 +1,27 @@
+/*
+ * @Author: apathyjade <apathyjade@outlook.com>
+ * @Version: 0.0.1
+ * @Date: 2019-02-22 11:00:08
+ * @Last Modified by:   apathyjade
+ * @Last Modified Time: 2019-02-22 11:00:08
+ */
+{ 
+  "presets": [
+    [
+      "@babel/env",
+      {
+      "targets": { "ie": "9", "edge": "17", "firefox": "60", "chrome": "67", "safari": "11.1"},
+      "useBuiltIns": "usage"
+      },
+    ],
+    // "@babel/preset-typescript"
+  ],
+  "plugins": [
+    // "@babel/plugin-syntax-jsx",
+    // ["@babel/plugin-transform-react-jsx", {
+    //   "pragma": "dom",
+    //   "pragmaFrag": "DomFrag"
+    // }]
+  ],
+  "exclude": "**/node_modules/**"
+}

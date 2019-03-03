@@ -4,8 +4,10 @@
   "description": "js dialog plugin",
   "main": "index.js",
   "scripts": {
-    "rollup": "rollup -c -w",
-    "build": "rollup -c ./config/build.js",
+    "dev": "BUILD_FIlLE=dialog rollup -c ./config/dev.js -w",
+    "build": "BUILD_FIlLE=dialog PRO=true rollup -c ./config/build.js",
+    "dev:tip": "BUILD_FIlLE=tip rollup -c ./config/dev.js -w",
+    "build:tip": "BUILD_FIlLE=tip PRO=true rollup -c ./config/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -23,15 +25,21 @@
     "cssnano": "^4.1.10",
     "deku": "^2.0.0-rc16",
     "postcss-modules": "^1.4.1",
+    "postcss-url": "^8.0.0",
     "precss": "^4.0.0",
     "react": "^16.8.3",
     "rollup": "^1.2.2",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-eslint": "^5.0.0",
     "rollup-plugin-json": "^3.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-notify": "^1.0.6",
     "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-progress": "^1.0.0",
+    "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-uglify": "^6.0.2",
+    "rollup-plugin-url": "^2.2.0",
     "stylus": "^0.54.5"
   },
   "dependencies": {

@@ -9,14 +9,11 @@
 import base from './base'
 import _ from 'lodash'
 import {uglify} from 'rollup-plugin-uglify';
+import cssnano from 'cssnano';
 
-export default _.merge(base, {
-  output: {
-    file: './dist/dialog.min.js',
-    format: 'umd',
-    name: 'fe.dialog'
-  },
+export default _.merge({
   plugins: [
-    uglify()
+    uglify(),
+    cssnano()
   ]
-})
+}, base)

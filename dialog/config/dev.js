@@ -8,14 +8,16 @@
 
 import base from './base'
 import _ from 'lodash'
-
+import serve from 'rollup-plugin-serve'
+const BUILD_FIlLE = process.env.BUILD_FIlLE
 export default _.merge(base, {
   output: {
-    file: './dist/dialog.min.js',
+    file: `./test/${BUILD_FIlLE}.min.js`,
     format: 'umd',
-    name: 'fe.dialog'
+    name: `fe.${BUILD_FIlLE}`
   },
   plugins: [
+    serve('test')
   ]
 })
 

@@ -19,10 +19,10 @@ import {setDomState} from './u'
  */
 function initOpts (ctx, options)  {
   let opts = {
-    msg: '默认内容',
     title: '提示',
+    msg: '默认内容',
     cls:'',
-    showHead:true,
+    type: 'warn', //warn ok error
     showFoot:true,
     showClose : true,
     showCancel: true,
@@ -44,28 +44,21 @@ function initOpts (ctx, options)  {
   opts.cls = `${ctx.$style.c} ${opts.cls}`;
   ctx.option = opts;
 }
-/**
- * 初始化组件dom
- *
- * @param {*} ctx
- */
+
+
 function createDom (ctx) {
   let opts = ctx.option;
   let doc = window.document
   let el = doc.createElement('div');
   ctx.el = el;
   el.className = opts.cls;
-
-  let head = (function(){
-    if(!opts.showHead){
-      return ``;
-    }
-    return `<div class="${ctx.$style.head}">${opts.title}</div>`;
+  let body = (function createBodyHtml () {
+    return `<div class=${ctx.$style.body}>
+              <div class="${ctx.$style.tipTitle}">${opts.title}</div>
+              <div class="${ctx.$style.tipMsg}">${opts.msg}</div>
+            </div>`
   })();
-
-  let body = `<div class=${ctx.$style.body}>${opts.msg}</div>`
-
-  let foot = (function(){
+  let foot = (function createFootHtml (){
     if(!opts.showFoot){
       return ``;
     }
@@ -78,12 +71,11 @@ function createDom (ctx) {
     }
     return `<div class="${ctx.$style.foot}">${footHtml}</div>`;
   })();
-
   let closeBtnHtml = opts.showClose ? `<span class="${ctx.$style.closeBtn}" data-event="close"></span>` : ``;
-  el.innerHTML = `<div class="${ctx.$style.lay}">${closeBtnHtml}${head}${body}${foot}</div>`;
+  el.innerHTML = `<div class="${ctx.$style.lay}">${closeBtnHtml}${body}${foot}</div>`;
 }
 
-class Dialog extends mixins {
+class Tip extends mixins {
   initCfg (opts) {
     initOpts(this, opts);
   }
@@ -91,4 +83,4 @@ class Dialog extends mixins {
     createDom(this);
   }
 };
-export default Dialog
+export default Tip

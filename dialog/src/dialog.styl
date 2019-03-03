@@ -15,8 +15,6 @@
   width: 100%;
   height: 100%;
   z-index 999;
-  color 656565;
-  font-size 12px
   text-align: center;
   
   &[data-state=opening],
@@ -51,8 +49,10 @@
     position relative
     display inline-block
     width: 448px;
+    color #656565;
+    font-size 12px
     line-height: 20px;
-    color: #353535;
+    // color: #353535;
     background-color: #fff;
     text-align: left;
     vertical-align: middle;
@@ -67,6 +67,24 @@
   }
   .body {
     padding: 32px;
+    ~/[data-type=ok] ^[1..1]:before,
+    ~/[data-type=warn] ^[1..1]:before,
+    ~/[data-type=error] ^[1..1]:before {
+      display: block;
+      margin: 14px auto 16px;
+      width: 64px;
+      height: 64px;
+      content: '';
+    }
+    ~/[data-type=ok] ^[1..1]:before {
+      background: url('./imgs/icon-ok.png') no-repeat;
+    }
+    ~/[data-type=warn] ^[1..1]:before {
+      background: url('./imgs/icon-warn.png') no-repeat;
+    }
+    ~/[data-type=error] ^[1..1]:before {
+      background: url('./imgs/icon-error.png') no-repeat;
+    }
   }
   .foot {
     margin: 0;
@@ -139,5 +157,15 @@
         box-shadow: 0 0 0 .1px #316CCB;
       }
     }
+  }
+  .tipTitle {
+    margin: 0 auto 8px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #353535;
+    text-align: center;
+  }
+  .tipMsg {
+    text-align: center;
   }
 }

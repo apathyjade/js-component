@@ -12,12 +12,18 @@
     测试
   </div>
 </body>
-<script src="../dist/dialog.js"></script>
+<script src="./tip.min.js"></script>
+<script src="./dialog.min.js"></script>
 <script>
   setTimeout(function() {
     window.d = new fe.dialog({
       autoDestroy: false,
       msg: '加载中...'
+    })
+    window.d = new fe.tip({
+      autoDestroy: false,
+      title: '操作成功',
+      msg: '这里是操作成功后提示文案...'
     })
   }, 100)
   

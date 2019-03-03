@@ -7,20 +7,29 @@
  */
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import notify from 'rollup-plugin-notify';
+import progress from 'rollup-plugin-progress';
+import {eslint} from 'rollup-plugin-eslint';
+
 import babel from 'rollup-plugin-babel';
 import postcss from 'rollup-plugin-postcss'
 import autoprefixer  from 'autoprefixer'
 import json from 'rollup-plugin-json';
-import cssnano from 'cssnano';
+import url from 'postcss-url'
+
+const BUILD_FIlLE = process.env.BUILD_FIlLE
+
 
 export default {
-  input: 'src/dialog.js',
+  input: [`src/${BUILD_FIlLE}.js`],
   output: {
-    file: './dist/dialog.js',
+    file: `./dist/${BUILD_FIlLE}.min.js`,
     format: 'umd',
-    name: 'fe.dialog'
+    name: `fe.${BUILD_FIlLE}`
   },
   plugins: [
+    notify(),
+    progress(),
     json(),
     babel(),
     postcss({
@@ -36,10 +45,14 @@ export default {
             "last 2 versions"
           ]
         }),
-        cssnano()
+        // cssnano(),
+        url({
+          url: 'inline',
+        })
       ]
     }),
     resolve({ jsnext: true, main: true, browser: true }),
-    commonjs()
+    commonjs(),
+    eslint()
   ]
 };
